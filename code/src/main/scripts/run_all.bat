@@ -1,0 +1,9 @@
+@echo off
+echo Starting AI Engine...
+start /MIN cmd /c "cd ..\ai-engine && uvicorn main:app --reload"
+timeout /t 5 >nul
+echo Compiling Java Scanner...
+javac ..\scanner\Scanner.java
+echo Running Scanner...
+java -cp ..\scanner Scanner
+pause
